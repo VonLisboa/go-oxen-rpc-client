@@ -14,7 +14,7 @@ and https://github.com/monero-ecosystem/go-monero-rpc-client
 [![GoDoc](https://godoc.org/github.com/vonlisboa/go-oxen-rpc-client/wallet?status.svg)](https://godoc.org/github.com/vonlisboa/go-oxen-rpc-client/wallet)
 
 ### Oxen RPC Version
-The ```go-oxen-rpc-client/wallet``` package is the RPC client for version `v1.3` of the [Oxen Wallet RPC](https://www.getmonero.org/resources/developer-guides/wallet-rpc.html).
+The ```go-oxen-rpc-client/wallet``` package is the RPC client for [Oxen Wallet RPC](https://docs.oxen.io/oxen-docs/using-the-oxen-blockchain/advanced/wallet-rpc-calls).
 
 ### Installation
 

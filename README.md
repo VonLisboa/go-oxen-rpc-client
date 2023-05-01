@@ -2,7 +2,7 @@ Go Oxen RPC Client
 ====================
 
 <p align="center">
-<img src="https://github.com/von-lisboa/go-oxen-rpc-client/raw/master/media/img/oxen_gopher.png" alt="Oxen Gopher" width="200" />
+<img src="https://github.com/vonlisboa/go-oxen-rpc-client/raw/master/media/img/monero_gopher.png" alt="Oxen Gopher" width="200" />
 </p>
 
 A client implementation for the Oxen wallet and daemon RPC written in go.
@@ -11,7 +11,7 @@ and https://github.com/monero-ecosystem/go-monero-rpc-client
 
 ## Wallet RPC Client
 
-[![GoDoc](https://godoc.org/github.com/von-lisboa/go-oxen-rpc-client/wallet?status.svg)](https://godoc.org/github.com/von-lisboa/go-oxen-rpc-client/wallet)
+[![GoDoc](https://godoc.org/github.com/vonlisboa/go-oxen-rpc-client/wallet?status.svg)](https://godoc.org/github.com/vonlisboa/go-oxen-rpc-client/wallet)
 
 ### Oxen RPC Version
 The ```go-oxen-rpc-client/wallet``` package is the RPC client for version `v1.3` of the [Oxen Wallet RPC](https://www.getmonero.org/resources/developer-guides/wallet-rpc.html).
@@ -19,7 +19,7 @@ The ```go-oxen-rpc-client/wallet``` package is the RPC client for version `v1.3`
 ### Installation
 
 ```sh
-go get -u github.com/von-lisboa/go-oxen-rpc-client
+go get -u github.com/vonlisboa/go-oxen-rpc-client
 ```
 
 #### Spawn the oxen-wallet-rpc daemon (without rpc login):
@@ -39,7 +39,7 @@ import (
   "fmt"
   "log"
 
-  "github.com/von-lisboa/go-oxen-rpc-client/wallet"
+  "github.com/vonlisboa/go-oxen-rpc-client/wallet"
 )
 
 func checkerr(err error) {
@@ -89,7 +89,7 @@ import (
   "fmt"
   "log"
 
-  "github.com/von-lisboa/go-oxen-rpc-client/wallet"
+  "github.com/vonlisboa/go-oxen-rpc-client/wallet"
 )
 
 func checkerr(err error) {

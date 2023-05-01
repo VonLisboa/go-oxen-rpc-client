@@ -8,7 +8,7 @@ import (
 	"github.com/gorilla/rpc/v2/json2"
 )
 
-// Client is a monero-wallet-rpc client.
+// Client is a oxen-wallet-rpc client.
 type Client interface {
 	// Return the wallet's balance.
 	GetBalance(*RequestGetBalance) (*ResponseGetBalance, error)
@@ -38,7 +38,7 @@ type Client interface {
 	SetAccountTagDescription(*RequestSetAccountTagDescription) error
 	// Returns the wallet's current block height.
 	GetHeight() (*ResponseGetHeight, error)
-	// Send monero to a number of recipients.
+	// Send oxen to a number of recipients.
 	Transfer(*RequestTransfer) (*ResponseTransfer, error)
 	// Same as transfer, but can split into more than one tx if necessary.
 	TransferSplit(*RequestTransferSplit) (*ResponseTransferSplit, error)
@@ -135,11 +135,11 @@ type Client interface {
 	StopMining() error
 	// Get a list of available languages for your wallet's seed.
 	GetLanguages() (*ResponseGetLanguages, error)
-	// Create a new wallet. You need to have set the argument "–wallet-dir" when launching monero-wallet-rpc to make this work.
+	// Create a new wallet. You need to have set the argument "–wallet-dir" when launching oxen-wallet-rpc to make this work.
 	CreateWallet(*RequestCreateWallet) error
 	// Restores a wallet from a given wallet address, view key, and optional spend key. You need to have set the argument "–wallet-dir" when launching monero-wallet-rpc to make this work.
 	GenerateFromKeys(*RequestGenerateFromKeys) (*ResponseGenerateFromKeys, error)
-	// Open a wallet. You need to have set the argument "–wallet-dir" when launching monero-wallet-rpc to make this work.
+	// Open a wallet. You need to have set the argument "-–wallet-dir" when launching oxen-wallet-rpc to make this work.
 	OpenWallet(*RequestOpenWallet) error
 	// Close the currently opened wallet, after trying to save it.
 	CloseWallet() error
@@ -165,7 +165,7 @@ type Client interface {
 	GetVersion() (*ResponseGetVersion, error)
 }
 
-// New returns a new monero-wallet-rpc client.
+// New returns a new oxen-wallet-rpc client.
 func New(cfg Config) Client {
 	cl := &client{
 		addr:    cfg.Address,

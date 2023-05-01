@@ -27,27 +27,27 @@ func NewPaymentID256() string {
 	return hex.EncodeToString(buf)
 }
 
-// XMRToDecimal converts a raw atomic XMR balance to a more
+// OXENToDecimal converts a raw atomic OXEN balance to a more
 // human readable format.
-func XMRToDecimal(xmr uint64) string {
-	str0 := fmt.Sprintf("%013d", xmr)
+func OXENToDecimal(OXEN uint64) string {
+	str0 := fmt.Sprintf("%013d", OXEN)
 	l := len(str0)
 	return str0[:l-12] + "." + str0[l-12:]
 }
 
-// XMRToFloat64 converts raw atomic XMR to a float64
-func XMRToFloat64(xmr uint64) float64 {
-	return float64(xmr) / 1e12
+// OXENToFloat64 converts raw atomic OXEN to a float64
+func OXENToFloat64(OXEN uint64) float64 {
+	return float64(OXEN) / 1e12
 }
 
-// Float64ToXMR converts a float64 to a raw atomic XMR
-func Float64ToXMR(xmr float64) uint64 {
-	return uint64(xmr * 1e12)
+// Float64ToOXEN converts a float64 to a raw atomic OXEN
+func Float64ToOXEN(OXEN float64) uint64 {
+	return uint64(OXEN * 1e12)
 }
 
-// StringToXMR converts a string to a raw atomic XMR
-func StringToXMR(xmr string) (uint64, error) {
-	f, err := strconv.ParseFloat(xmr, 64)
+// StringToOXEN converts a string to a raw atomic OXEN
+func StringToOXEN(OXEN string) (uint64, error) {
+	f, err := strconv.ParseFloat(OXEN, 64)
 	if err != nil {
 		return 0, err
 	}

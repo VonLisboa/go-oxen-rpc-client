@@ -1,4 +1,4 @@
-module github.com/monero-ecosystem/go-monero-rpc-client
+module go-oxen-rpc-client
 
 go 1.14
 

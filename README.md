@@ -1,30 +1,31 @@
-Go Monero RPC Client
+Go Oxen RPC Client
 ====================
 
 <p align="center">
-<img src="https://github.com/monero-ecosystem/go-monero-rpc-client/raw/master/media/img/monero_gopher.png" alt="Monero Gopher" width="200" />
+<img src="https://github.com/von-lisboa/go-oxen-rpc-client/raw/master/media/img/oxen_gopher.png" alt="Oxen Gopher" width="200" />
 </p>
 
-A client implementation for the Monero wallet and daemon RPC written in go.
-This package is inspired by https://github.com/gabstv/go-monero.
+A client implementation for the Oxen wallet and daemon RPC written in go.
+This package is inspired by https://github.com/gabstv/go-monero
+and https://monero-ecosystem/go-oxen-rpc-client
 
 ## Wallet RPC Client
 
-[![GoDoc](https://godoc.org/github.com/monero-ecosystem/go-monero-rpc-client/wallet?status.svg)](https://godoc.org/github.com/monero-ecosystem/go-monero-rpc-client/wallet)
+[![GoDoc](https://godoc.org/github.com/von-lisboa/go-oxen-rpc-client/wallet?status.svg)](https://godoc.org/github.com/von-lisboa/go-oxen-rpc-client/wallet)
 
-### Monero RPC Version
-The ```go-monero-rpc-client/wallet``` package is the RPC client for version `v1.3` of the [Monero Wallet RPC](https://www.getmonero.org/resources/developer-guides/wallet-rpc.html).
+### Oxen RPC Version
+The ```go-oxen-rpc-client/wallet``` package is the RPC client for version `v1.3` of the [Oxen Wallet RPC](https://www.getmonero.org/resources/developer-guides/wallet-rpc.html).
 
 ### Installation
 
 ```sh
-go get -u github.com/monero-ecosystem/go-monero-rpc-client
+go get -u github.com/von-lisboa/go-oxen-rpc-client
 ```
 
-#### Spawn the monero-wallet-rpc daemon (without rpc login):
+#### Spawn the oxen-wallet-rpc daemon (without rpc login):
 
 ```sh
-./monero-wallet-rpc --wallet-file /home/$user/stagenetwallet/stagenetwallet --daemon-address pool.cloudissh.com:38081 --stagenet --rpc-bind-port 6061 --password 'mystagenetwalletpassword' --disable-rpc-login
+./oxen-wallet-rpc --wallet-file /home/$user/stagenetwallet/stagenetwallet --daemon-address pool.cloudissh.com:38081 --stagenet --rpc-bind-port 6061 --password 'mystagenetwalletpassword' --disable-rpc-login
 ```
 You can use our remote node for the stagenet running at pool.cloudissh.com port `38081`.
 
@@ -38,7 +39,7 @@ import (
   "fmt"
   "log"
 
-  "github.com/monero-ecosystem/go-monero-rpc-client/wallet"
+  "github.com/von-lisboa/go-oxen-rpc-client/wallet"
 )
 
 func checkerr(err error) {
@@ -72,10 +73,10 @@ func main() {
 }
 ```
 
-### Spawn the monero-wallet-rpc daemon (with rpc login):
+### Spawn the oxen-wallet-rpc daemon (with rpc login):
 
 ```sh
-./monero-wallet-rpc --wallet-file /home/$user/stagenetwallet/stagenetwallet --daemon-address pool.cloudissh.com:38081 --stagenet --rpc-bind-port 6061 --password 'mystagenetwalletpassword' --rpc-login test:testpass
+./oxen-wallet-rpc --wallet-file /home/$user/stagenetwallet/stagenetwallet --daemon-address pool.cloudissh.com:38081 --stagenet --rpc-bind-port 6061 --password 'mystagenetwalletpassword' --rpc-login test:testpass
 ```
 
 #### Go code:
@@ -88,7 +89,7 @@ import (
   "fmt"
   "log"
 
-  "github.com/monero-ecosystem/go-monero-rpc-client/wallet"
+  "github.com/von-lisboa/go-oxen-rpc-client/wallet"
 )
 
 func checkerr(err error) {
@@ -134,12 +135,12 @@ As of now, only the wallet RPC has been implemented. The daemon RPC will follow 
 * You can contribute with pull requests.
 
 # Donations
-I love Monero (XMR) and building applications for and on top of Monero.
+I love OXEN (Loki) and building applications for and on top of Oxen.
 
-You can make me happy by donating Monero to the following address:
+You can make me happy by donating Oxen to the following address:
 
 ```
-89woiq9b5byQ89SsUL4Bd66MNfReBrTwNEDk9GoacgESjfiGnLSZjTD5x7CcUZba4PBbE3gUJRQyLWD4Akz8554DR4Lcyoj
+LQN2bEMzX4kPJZHhFheboD6gbTnLhzCDQZGrHkuw4JsaEtVWKmD631bLnwoZsppsSSYV9YCy3hjLyURGYLF2cwn3Cn8vgYh
 ```
 
 # LICENSE

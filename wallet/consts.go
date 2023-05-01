@@ -9,7 +9,7 @@ import (
 // H is a helper map shortcut.
 type H map[string]interface{}
 
-// ErrorCode is a monero-wallet-rpc error code.
+// ErrorCode is a oxen-wallet-rpc error code.
 // Copied from https://github.com/monero-project/monero/blob/release-v0.11.0.0/src/wallet/wallet_rpc_server_error_codes.h
 type ErrorCode int
 
@@ -42,7 +42,7 @@ const (
 	ErrNotOpen ErrorCode = -13
 )
 
-// WalletError is the error structured returned by the monero-wallet-rpc
+// WalletError is the error structured returned by the oxen-wallet-rpc
 type WalletError struct {
 	Code    ErrorCode `json:"code"`
 	Message string    `json:"message"`

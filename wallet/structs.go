@@ -21,9 +21,9 @@ type RequestGetBalance struct {
 	AddressIndices []uint64 `json:"address_indices"`
 }
 type ResponseGetBalance struct {
-	// The total balance of the current monero-wallet-rpc in session.
+	// The total balance of the current oxen-wallet-rpc in session.
 	Balance uint64 `json:"balance"`
-	// Unlocked funds are those funds that are sufficiently deep enough in the Monero blockchain to be considered safe to spend.
+	// Unlocked funds are those funds that are sufficiently deep enough in the Oxen blockchain to be considered safe to spend.
 	UnlockedBalance uint64 `json:"unlocked_balance"`
 	// True if importing multisig data is needed for returning a correct balance.
 	MultisigImportNeeded bool `json:"multisig_import_needed"`
@@ -54,7 +54,7 @@ type RequestGetAddress struct {
 	AddressIndex []uint64 `json:"address_index"`
 }
 type ResponseGetAddress struct {
-	// The 95-character hex address string of the monero-wallet-rpc in session.
+	// The 95-character hex address string of the oxen-wallet-rpc in session.
 	Address string `json:"address"`
 	// Array of addresses informations
 	Addresses []struct {
@@ -210,13 +210,13 @@ type RequestSetAccountTagDescription struct {
 
 // GetHeight()
 type ResponseGetHeight struct {
-	// The current monero-wallet-rpc's blockchain height. If the wallet has been offline for a long time, it may need to catch up with the daemon.
+	// The current oxen-wallet-rpc's blockchain height. If the wallet has been offline for a long time, it may need to catch up with the daemon.
 	Height uint64 `json:"height"`
 }
 
 // Transfer()
 type RequestTransfer struct {
-	// Array of destinations to receive XMR:
+	// Array of destinations to receive OXEN:
 	Destinations []*Destination `json:"destinations"`
 	// (Optional) Transfer from this account index. (Defaults to 0)
 	AccountIndex uint64 `json:"account_index"`
@@ -228,13 +228,13 @@ type RequestTransfer struct {
 	Mixing uint64 `json:"mixin"`
 	// (Optional) Number of outputs to mix in the transaction (this output + N decoys from the blockchain).
 	RingSize uint64 `json:"ring_size,omitempty"`
-	// Number of blocks before the monero can be spent (0 to not add a lock).
+	// Number of blocks before the oxen can be spent (0 to not add a lock).
 	UnlockTime uint64 `json:"unlock_time"`
 	// (Optional) Random 32-byte/64-character hex string to identify a transaction.
 	PaymentID string `json:"payment_id"`
 	// (Optional) Return the transaction key after sending.
 	GetTxKey bool `json:"get_tx_key"`
-	// (Optional) If true, the newly created transaction will not be relayed to the monero network. (Defaults to false)
+	// (Optional) If true, the newly created transaction will not be relayed to the oxen network. (Defaults to false)
 	DoNotRelay bool `json:"do_not_relay,omitempty"`
 	// (Optional) Return the transaction as hex string after sending (Defaults to false)
 	GetTxHex bool `json:"get_tx_hex,omitempty"`
@@ -253,7 +253,7 @@ type ResponseTransfer struct {
 	// String for the publically searchable transaction hash.
 	TxHash string `json:"tx_hash"`
 	// String for the transaction key if get_tx_key is true, otherwise, blank string.
-	TxKey      string `json:"tx_key"`
+	TxKey string `json:"tx_key"`
 	TxMetadata string `json:"tx_metadata"` // TxMetadata tx_metadata - Set of transaction metadata needed to relay this transfer later, if get_tx_metadata is true.
 
 	// String. Set of unsigned tx for cold-signing purposes.
@@ -262,7 +262,7 @@ type ResponseTransfer struct {
 
 // TransferSplit()
 type RequestTransferSplit struct {
-	// Array of destinations to receive XMR:
+	// Array of destinations to receive OXEN:
 	Destinations []*Destination `json:"destinations"`
 	// (Optional) Transfer from this account index. (Defaults to 0)
 	AccountIndex uint64 `json:"account_index"`
@@ -272,7 +272,7 @@ type RequestTransferSplit struct {
 	Mixin uint64 `json:"mixin"`
 	// (Optional) Sets ringsize to n (mixin + 1).
 	RingSize uint64 `json:"ring_size,omitempty"`
-	// Number of blocks before the monero can be spent (0 to not add a lock).
+	// Number of blocks before the oxen can be spent (0 to not add a lock).
 	UnlockTime uint64 `json:"unlock_time"`
 	// (Optional) Random 32-byte/64-character hex string to identify a transaction.
 	PaymendID string `json:"payment_id"`
@@ -280,7 +280,7 @@ type RequestTransferSplit struct {
 	GetxKeys bool `json:"get_tx_keys"`
 	// Set a priority for the transactions. Accepted Values are: 0-3 for: default, unimportant, normal, elevated, priority.
 	Priority Priority `json:"priority"`
-	// (Optional) If true, the newly created transaction will not be relayed to the monero network. (Defaults to false)
+	// (Optional) If true, the newly created transaction will not be relayed to the oxen network. (Defaults to false)
 	DoNotRelay bool `json:"do_not_relay,omitempty"`
 	// (Optional) Return the transactions as hex string after sending
 	GetTxHex bool `json:"get_tx_hex,omitempty"`
@@ -338,7 +338,7 @@ type ResponseSubmitTransfer struct {
 type RequestSweepDust struct {
 	// (Optional) Return the transaction keys after sending.
 	GetTxKeys bool `json:"get_tx_keys"`
-	// (Optional) If true, the newly created transaction will not be relayed to the monero network. (Defaults to false)
+	// (Optional) If true, the newly created transaction will not be relayed to the oxen network. (Defaults to false)
 	DoNotRelay bool `json:"do_not_relay,omitempty"`
 	// (Optional) Return the transactions as hex string after sending. (Defaults to false)
 	GetTxHex bool `json:"get_tx_hex,omitempty"`
@@ -380,7 +380,7 @@ type RequestSweepAll struct {
 	Mixin uint64 `json:"mixin"`
 	//  (Optional) Sets ringsize to n (mixin + 1).
 	RingSize uint64 `json:"ring_size,omitempty"`
-	//  Number of blocks before the monero can be spent (0 to not add a lock).
+	//  Number of blocks before the oxen can be spent (0 to not add a lock).
 	UnlockTime uint64 `json:"unlock_time"`
 	//  (Optional) Random 32-byte/64-character hex string to identify a transaction.
 	PaymentID string `json:"payment_id"`
@@ -428,7 +428,7 @@ type RequestSweepSingle struct {
 	Mixin uint64 `json:"mixin"`
 	// (Optional) Sets ringsize to n (mixin + 1).
 	RingSize uint64 `json:"ring_size,omitempty"`
-	// Number of blocks before the monero can be spent (0 to not add a lock).
+	// Number of blocks before the oxen can be spent (0 to not add a lock).
 	UnlockTime uint64 `json:"unlock_time"`
 	// (Optional) Random 32-byte/64-character hex string to identify a transaction.
 	PaymentID string `json:"payment_id"`
@@ -1015,34 +1015,6 @@ type RequestCreateWallet struct {
 	Password string `json:"password"`
 	// Language for your wallets' seed.
 	Language string `json:"language"`
-}
-
-// GenerateFromKeys()
-type RequestGenerateFromKeys struct {
-	// (Optional) The block height to restore the wallet from. (Defaults to 0)
-	RestoreHeight int64 `json:"restore_height"`
-	// The wallet's file name on the RPC server.
-	Filename string `json:"filename"`
-	// The wallet's primary address.
-	Address string `json:"address"`
-	// (Optional - omit to create a view-only wallet) The wallet's private spend key.
-	SpendKey string `json:"spendkey"`
-	// The wallet's private view key.
-	ViewKey string `json:"viewkey"`
-	// The wallet's password.
-	Password string `json:"password"`
-	// (Optional) If true, save the current wallet before generating the new wallet. (Defaults to true)
-	AutoSaveCurrent bool `json:"autosave_current"`
-	// (Optional) Language for your wallets' seed. (Defaults is "English")
-	Language bool `json:"language"`
-}
-
-// GenerateFromKeys()
-type ResponseGenerateFromKeys struct {
-	// The wallet's address.
-	Address string `json:"address"`
-	// Verification message indicating that the wallet was generated successfully and whether or not it is a view-only wallet.
-	Info string `json:"info"`
 }
 
 // OpenWallet()

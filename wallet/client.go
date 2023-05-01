@@ -129,15 +129,11 @@ type Client interface {
 	Refresh(*RequestRefresh) (*ResponseRefresh, error)
 	// Rescan the blockchain for spent outputs.
 	RescanSpent() error
-	// Start mining in the Monero daemon.
-	StartMining(*RequestStartMining) error
-	// Stop mining in the Monero daemon.
-	StopMining() error
 	// Get a list of available languages for your wallet's seed.
 	GetLanguages() (*ResponseGetLanguages, error)
 	// Create a new wallet. You need to have set the argument "–wallet-dir" when launching oxen-wallet-rpc to make this work.
 	CreateWallet(*RequestCreateWallet) error
-	// Restores a wallet from a given wallet address, view key, and optional spend key. You need to have set the argument "–wallet-dir" when launching monero-wallet-rpc to make this work.
+	// Restores a wallet from a given wallet address, view key, and optional spend key. You need to have set the argument "–wallet-dir" when launching oxen-wallet-rpc to make this work.
 	GenerateFromKeys(*RequestGenerateFromKeys) (*ResponseGenerateFromKeys, error)
 	// Open a wallet. You need to have set the argument "-–wallet-dir" when launching oxen-wallet-rpc to make this work.
 	OpenWallet(*RequestOpenWallet) error

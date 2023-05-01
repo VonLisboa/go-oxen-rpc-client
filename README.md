@@ -6,8 +6,8 @@ Go Oxen RPC Client
 </p>
 
 A client implementation for the Oxen wallet and daemon RPC written in go.
-This package is inspired by https://github.com/gabstv/go-monero
-and https://monero-ecosystem/go-oxen-rpc-client
+This package is inspired by https://github.com/gabstv/go-monero, https://monero-ecosystem/go-oxen-rpc-client
+and https://github.com/monero-ecosystem/go-monero-rpc-client
 
 ## Wallet RPC Client
 
